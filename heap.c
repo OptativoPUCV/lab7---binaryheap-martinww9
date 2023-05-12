@@ -18,10 +18,6 @@ typedef struct Heap{
 
 
 void* heap_top(Heap* pq) {
-  if (pq->size == 0) {
-    printf("Error: el Heap está vacío.\n");
-    exit(1);
-  }
   return pq->heapArray[0].data;
 }
 
