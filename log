@@ -25,3 +25,22 @@ Fri 12 May 2023 02:07:52 PM UTC:
  tests:  1|3
 total_score: 10/70
 ff27f34
+Fri 12 May 2023 02:08:43 PM UTC: 
+ heap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:26:26: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka ‘struct nodo’})
+   26 |   return pq->heapArray[0]->data;
+      |                          ^~
+heap.c: In function ‘heap_top’:
+heap.c:28:1: error: control reaches end of non-void function [-Werror=return-type]
+   28 | }
+      | ^
+At top level:
+heap.c:21:11: error: ‘heap_top’ defined but not used [-Werror=unused-function]
+   21 |     void* heap_top(Heap* pq) {
+      |           ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e6382f4
