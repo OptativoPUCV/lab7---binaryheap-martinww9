@@ -31,7 +31,6 @@ void heap_push(Heap* pq, void* data, int priority){
     pq->capac = pq->capac * 2 + 1;
     pq->heapArray = (heapElem*) realloc(pq->heapArray, pq->capac * sizeof(heapElem));
     if (pq->heapArray == NULL) {
-      printf("Error: no se pudo reservar memoria para el arreglo heapArray.\n");
       exit(1);
     }
   }
@@ -51,7 +50,6 @@ void heap_push(Heap* pq, void* data, int priority){
 
 void heap_pop(Heap* pq){
     if (pq->size == 0) {
-    printf("Error: el Heap está vacío.\n");
     exit(1);
   }
   
@@ -80,12 +78,10 @@ Heap* createHeap(){
   
   Heap* newHeap = (Heap*) malloc(sizeof(Heap));
   if (newHeap == NULL) {
-    printf("Error: no se pudo reservar memoria para el Heap.\n");
     exit(1);
   }
   newHeap->heapArray = (heapElem*) malloc(3 * sizeof(heapElem));
   if (newHeap->heapArray == NULL) {
-    printf("Error: no se pudo reservar memoria para el arreglo heapArray.\n");
     exit(1);
   }
   newHeap->size = 0;
