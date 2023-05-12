@@ -50,6 +50,29 @@ void heap_push(Heap* pq, void* data, int priority){
 
 
 void heap_pop(Heap* pq){
+    if (pq->size == 0) {
+    printf("Error: el Heap está vacío.\n");
+    exit(1);
+  }
+  
+  pq->size--;
+  pq->heapArray[0] = pq->heapArray[pq->size];
+  
+  int i = 0;
+  while (2*i+1 < pq->size) {
+    int child = 2*i+1;
+    if (child+1 < pq->size && pq->heapArray[child+1].priority > pq->heapArray[child].priority) {
+      child++;
+    }
+    if (pq->heapArray[i].priority < pq->heapArray[child].priority) {
+      heapElem temp = pq->heapArray[i];
+      pq->heapArray[i] = pq->heapArray[child];
+      pq->heapArray[child] = temp;
+      i = child;
+    } else {
+      break;
+    }
+  }
 
 }
 
