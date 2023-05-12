@@ -44,3 +44,9 @@ heap.c:21:11: error: ‘heap_top’ defined but not used [-Werror=unused-functio
 cc1: all warnings being treated as errors
 Compilation failed
 e6382f4
+Fri 12 May 2023 02:09:17 PM UTC: 
+ heap.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+ tests:  1|0
+Error: el Heap está vacío.
+6f58922
